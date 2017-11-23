@@ -15,6 +15,15 @@ These jsons and dataframes are saved in the same folders where the `aligned.swc`
 
 To use the script, simply call `python parser.py` with an additional parameter `-fd` to specify the directory where your files are, and it will automatically traverse all directories. 
 
+If you have downloaded the repo from github, run `pip install -e .` from within the folder. Then, from Python, you can do this:
+
+```
+from swc_parser import parser
+parser.parse_files('PATH/TO/spoken_wikipedia_corpus')
+```
+
+and voilà!
+
 ### About the dataframe schema
 
 `start_time` and `end_time` are taken directly from the XML schema, as well as the term that is being pronounced, which is stored in the schema as `t` or maybe `n`. It's called `term` here for transparency.

@@ -17,6 +17,6 @@ setup(
     install_requires=[
         'xmltodict',
         'pandas',
-        'click'
+        'click',
     ]
 )
