@@ -1,0 +1,1 @@
+Keeping with the Spoken Wikipedia Corpus license, this project is licensed under [CC-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/). Full info [here](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
