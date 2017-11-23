@@ -12,6 +12,11 @@ def main(files_directory):
 
 
 def df_ize(doc_as_array, address):
+    """
+    :param doc_as_array: list of items with schema ["term", "start_time", "end_time", "phonemes"]
+    :param address: Where to write the dataframe to
+    :return:
+    """
     df = pd.DataFrame(
         doc_as_array,
         columns=["term", "start_time", "end_time", "phonemes"]
@@ -32,6 +37,11 @@ def parse_files(swc_loc):
 
 
 def parse_file(root, swc_filename):
+    """
+    :param root: Directory where the swc file is
+    :param swc_filename: The name of the swc file, assumed to be aligned.swc
+    :return: Writes json and dataframe files or prints problem filenames
+    """
     file_loc = root + '/' + swc_filename
     file_str = open(file_loc).read()
     file_dict = xmltodict.parse(file_str)
@@ -60,6 +70,11 @@ def parse_metadata(file_dict):
 
 
 def printer(pt_n):
+    """
+    The schema is complicated. This coalesces missing data.
+    :param pt_n:
+    :return: A list with schema ["term", "start_time", "end_time", "phonemes"]
+    """
     if '@start' in pt_n:
         start = pt_n['@start']
     else:
@@ -80,6 +95,12 @@ def printer(pt_n):
 
 
 def parse_document(file_dict):
+    """
+    :param file_dict: A parsed xml file with a complicated schema. Almost all files will be parsed.
+    Two problematic files are `Mary_Wollstonecraft` and `Yellow_River_Cantata`,
+    which are missing an element from the schema.
+    :return: A list of lists with schema ["term", "start_time", "end_time", "phonemes"]
+    """
     document = file_dict['article']['d']['p']
     morphemes = []
     for utterance in document:
