@@ -1,12 +1,12 @@
 This repository has a simple script that turns the [Spoken Wikipedia Corpus](https://nats.gitlab.io/swc/) into dataframes and jsons. I created this repo because currently the data when downloaded is an XML format that is not easily human readable. 
 
-###About the script
+###About the script###
 
 `parser.py` works from the top-level directory (i.e. `PATH/TO/spoken_wikipedia_corpus/.`), traverses all the directories, and creates jsons (if you want to munge the data in a different way from how I did it here) as well as dataframes containing the columns `"term"`, `"start_time"`, `"end_time"`, and `"phonemes"]`. 
 
 These jsons and dataframes are saved in the same folders where the `aligned.swc` files are for each Wikipedia article, and are saved as `aligned.swc.json` and `aligned.swc.df`.
 
-###About the dataframe schema
+###About the dataframe schema###
 
 `start_time` and `end_time` are taken directly from the XML schema, as well as the term that is being pronounced, which is stored in the schema as `t` or maybe `n`. It's called `term` here for transparency.
 
