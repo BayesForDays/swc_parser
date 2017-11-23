@@ -1,4 +1,4 @@
-This repository has a simple script that turns the [Spoken Wikipedia Corpus](https://nats.gitlab.io/swc/) into dataframes and jsons. I created this repo because currently the data when downloaded is an XML format that is not easily human readable. 
+This repository has a simple script that turns the [Spoken Wikipedia Corpus](https://nats.gitlab.io/swc/) into dataframes and jsons. I created this repo because currently the data when downloaded is an XML format that is not easily human readable. I might turn this into a package since there are a couple of dependencies.
 
 ### About the script
 
@@ -13,7 +13,7 @@ These jsons and dataframes are saved in the same folders where the `aligned.swc`
 
 #### Use
 
-To use the script, simply call `python parser.py` with an additional parameter `-fd` to specify the directory where your files are, and it will automatically traverse all directories. I might turn this into a package.
+To use the script, simply call `python parser.py` with an additional parameter `-fd` to specify the directory where your files are, and it will automatically traverse all directories. 
 
 ### About the dataframe schema
 
